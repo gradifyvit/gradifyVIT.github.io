@@ -194,7 +194,7 @@
     
     {
         addOption: function() {
-            return '\n                        <option value="grade">Grade</option>\n                        <option value="10.0" style="color: red;">S</option>\n                        <option value="9.00" style="color: red;">A</option>\n                        <option value="8.00" style="color: red;">B</option>\n                        <option value="7.00" style="color: red;">C</option>\n                        <option value="6.00" style="color: red;">D</option>\n                        <option value="5.00" style="color: red;">E</option>\n                        <option value="0.0" style="color: red;">F</option>\n                        <option value="0.0" style="color: red;">N</option>\n                        '
+            return '\n                        <option value="grade" style="color: #808080; background-color: var(--primary-color);">Grade</option>\n                        <option value="10.0" style="color: var(--accent-color);  background-color: var(--primary-color);">S</option>\n                        <option value="9.00" style="color: var(--accent-color);  background-color: var(--primary-color);">A</option>\n                        <option value="8.00" style="color: var(--accent-color);  background-color: var(--primary-color);">B</option>\n                        <option value="7.00" style="color: var(--accent-color);  background-color: var(--primary-color);">C</option>\n                        <option value="6.00" style="color: var(--accent-color);  background-color: var(--primary-color);">D</option>\n                        <option value="5.00" style="color: var(--accent-color);  background-color: var(--primary-color);">E</option>\n                        <option value="0.0" style="color: var(--accent-color);  background-color: var(--primary-color);">F</option>\n                        <option value="0.0" style="color: var(--accent-color); background-color: var(--primary-color);">N</option>\n                        '
         },
         addSemester: function(e) {
             var t = ""
@@ -215,7 +215,7 @@
                     if (r == n) {
                         var a = "";
                         e.forEach(function(e, t) {
-                            a += ' \n                                                         <li class="gpa-calculator__course-li course-'.concat(t, '">\n                                                               <input type="text" name="course-name" value="').concat(e.name, '" id="course-name" class="gpa-calculator__course-name gpa-calculator__input" placeholder="Subject  Name"> \n                                                               <select class="gpa-calculator__grate grades-').concat(t, '" name="grade" id="grade"></select> \n                                                               <input type="number" name="credits" step="1" min="0" max="20" id="credits" value="').concat(e.credits, '" class="gpa-calculator__credits credits-').concat(t, ' gpa-calculator__input " placeholder="Credits"> \n                                                               <button class="gpa-calculator__remove-item"></button> \n                                                         </li>\n                                                   '),
+                            a += ' \n                                                         <li class="gpa-calculator__course-li course-'.concat(t, '">\n                                                               <input type="text" name="course-name" value="').concat(e.name, '" id="course-name" class="gpa-calculator__course-name gpa-calculator__input" placeholder="Subject  Name"> \n                                                               <select class="gpa-calculator__grate grades-').concat(t, ' default-color" name="grade" id="grade" onchange="hello(this)"></select> \n                                                               <input type="number" name="credits" step="1" min="0" max="20" id="credits" value="').concat(e.credits, '" class="gpa-calculator__credits credits-').concat(t, ' gpa-calculator__input " placeholder="Credits"> \n                                                               <button class="gpa-calculator__remove-item"></button> \n                                                         </li>\n                                                   '),
                             setTimeout(function() {
                                 "" != e.grade && document.querySelectorAll(".gpa-calculator__grate").forEach(function(t, r) {
                                     r == e.id && (t.value = e.grade)
@@ -571,15 +571,22 @@ icon.onclick = function () {
 }
 
 
-      document.getElementById("toggle-navigation").addEventListener("click", function() {
-        var navigationPage = document.getElementById("navigation-page");
-        if (navigationPage.style.display === "flex") {
-          navigationPage.style.animation = "pop-out 0.3s ease forwards";
-          setTimeout(function() {
-            navigationPage.style.display = "none";
-          }, 300);
-        } else {
-          navigationPage.style.display = "flex";
-          navigationPage.style.animation = "pop-in 0.3s ease forwards";
-        }
-      });
+document.getElementById("toggle-navigation").addEventListener("click", function() {
+var navigationPage = document.getElementById("navigation-page");
+if (navigationPage.style.display === "flex") {
+    navigationPage.style.animation = "pop-out 0.3s ease forwards";
+    setTimeout(function() {
+    navigationPage.style.display = "none";
+    }, 300);
+} else {
+    navigationPage.style.display = "flex";
+    navigationPage.style.animation = "pop-in 0.3s ease forwards";
+}
+});
+
+function hello(select) {
+    select.classList.remove('default-color');
+    select.classList.add('selected-option');
+    var selectOption = select.querySelector('option[value="grade"]');
+    selectOption.disabled = true;
+}
