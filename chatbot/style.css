@@ -23,12 +23,6 @@
 	  --accent-color: #8E4585;
 	  --scroller: #6c3465;
   }
-  
-  h1 {
-	  color: var(--secondary-color);
-	  text-align: left;
-	  margin-bottom: 20px;
-  }
 
   html,body {
 	-webkit-font-smoothing: antialiased;
@@ -53,13 +47,12 @@
   .container {
 	  display: flex;
 	  flex: 1;
-	justify-content: center;
-	  align-items: left;
-	  margin-left: 400px;
+	  margin: 0 auto;
 	  height: 100%;
 	  flex-direction: column;
+	  padding: 20px;
   }
-  
+    
   .chat {
 	  height: 300px;
 	  width: 50vw;
