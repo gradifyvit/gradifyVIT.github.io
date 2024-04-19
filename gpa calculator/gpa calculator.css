@@ -323,7 +323,6 @@
     padding: 5px 10px;
     outline: 0;
     font-family: "Source Code Pro", monospace;
-    color: #808080!important;
     font-size: 16px;
     font-weight: 400;
     background-color: transparent!important; 
@@ -338,7 +337,15 @@
     background-repeat: no-repeat;
     background-position: right .75rem center;
   }
-  
+
+  .default-color {
+    color: #808080;
+  }
+
+  .selected-option {
+    color: var(--accent-color);
+  }
+
     .gpa-calculator__container .gpa-calculator__semester-cgpa {
         font-weight: 700!important;
         color: #3a3a3a;
