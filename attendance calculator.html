@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/dfb5da906e.js" crossorigin="anonymous"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+  <title>gradifyVIT</title>
+    <style>
+        :root {
+            --pcol: #32CD32;
+            --scol: green;
+            --primary-color: #202020;
+            --secondary-color: white;
+            --accent-color: #ccff00;
+        }
+
+        .light-theme{
+            --primary-color: #FFF8E1;
+            --secondary-color: black;
+            --accent-color: #8E4585;
+        }
+        body,html {
+            font-family: "Source Code Pro", monospace;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        *::placeholder {
+            font-family: "Source Code Pro", monospace;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[class='data-input'] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            background: none;
+            color: var(--secondary-color);
+            transition: border 0.4s ease ;
+            outline: none;
+        }
+        input[class='data-input']:focus {
+            border: 3px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        input[class='data-input']:focus::placeholder {
+            color: transparent;
+        }
+        input[class='data-input']::placeholder {
+            transition: color 0.4s ease ;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0; 
+        }
+
+        button {
+            background-color: transparent;
+            color: var(--accent-color);
+            padding: 10px 20px;
+            border: 3px solid var(--accent-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Source Code Pro", monospace;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-size: large;
+        }
+        button:hover {
+            background-color:var(--accent-color);
+            color: var(--primary-color);
+            border-color: var(--accent-color);
+            font-weight: bold;
+        }
+        #progress {
+            color: var(--secondary-color);
+            font-size: 27px;
+            border: 1px solid var(--secondary-color);
+            padding: 12px 10px;
+            height: 100%;
+            background: linear-gradient(var(--pcol), var(--scol), var(--pcol));
+            animation: 
+                shine 10s ease-in infinite,
+                end 4s ease-out infinite;
+            transition: width 3s ease;
+
+        }
+        #progress-bar {
+            background: var(--primary-color);
+            display: none;
+        }
+        #bar-container {
+            border: 1px solid var(--secondary-color);
+        }
+
+        #neededClasses { 
+            margin-top: 10px; 
+            font-size: 15px;
+            color: var(--secondary-color);
+        }
+        @keyframes shine {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 50px; }
+        }
+
+        @keyframes end {
+            0%, 100% { box-shadow: 0 0 10px 0px var(--scol); }
+            50% { box-shadow: 0 0 15px 5px var(--scol); }
+        }
+        #icon{
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: fixed;
+}
+h1{
+            color: var(--accent-color);
+        }
+
+        #navigation-page {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary-color);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .navigation-links {
+      text-align: center;
+    }
+
+    .navigation-links a {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+
+    .navigation-links a:hover {
+      font-size: 23px;
+      color: var(--accent-color);
+    }
+
+    .menu-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    #icon {
+            font-size: 25px;
+            margin-left: 18px;
+            margin-top: 18px;
+            position: fixed;
+            color: var(--secondary-color);
+        }
+
+    @keyframes pop-in {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pop-out {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    .menu {
+  --s: 30px;
+  --c: var(--accent-color);
+  
+  height: var(--s);
+  aspect-ratio: 1;
+  border: none;
+  padding: 0;
+  border-inline: calc(var(--s)/2) solid #0000; 
+  box-sizing: content-box;
+  --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) 
+         no-repeat content-box border-box;
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
+         repeat-y content-box border-box;
+  background: 
+    var(--_g2) left  var(--_p,0px) top,
+    var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+    var(--_g2) right var(--_p,0px) top,
+    var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+  background-size: 
+    20% 80%,
+    40% 100%;
+  position: relative;
+  clip-path: inset(0 25%);
+  -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+  cursor: pointer;
+  transition: 
+    background-position .3s var(--_s,.3s), 
+    clip-path 0s var(--_s,.6s);
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+}
+.menu:before,
+.menu:after {
+  content:"";
+  position: absolute;
+  border-radius: var(--s);
+  inset: 40% 0;
+  background: var(--c);
+  transition: transform .3s calc(.3s - var(--_s,.3s));
+}
+
+.menu:checked {
+  clip-path: inset(0);
+  --_p: calc(-1*var(--s));
+  --_s: 0s;
+}
+.menu:checked:before {
+  transform: rotate(45deg);
+}
+.menu:checked:after {
+  transform: rotate(-45deg);
+}
+.menu:focus-visible {
+  clip-path: none;
+  -webkit-mask: none;
+  border: none;
+  outline: 2px solid var(--c);
+  outline-offset: 5px;
+}
+    </style>
+</head>
+<body>
+    <i class="fa-solid fa-toggle-on" id="icon"></i>
+    <div class="menu-icon" id="toggle-navigation">
+        <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+      </div>
+    
+      <div id="navigation-page">
+        <div class="navigation-links">
+          <a href="index.html">HOME</a>
+          <a href="gpa calculator.html">GPA CALCULATOR</a>
+          <a href="quick cgpa.html">QUICK CGPA CALCULATOR</a>
+          <a href="goal gpa.html">GOAL GPA FINDER</a>
+          <a href="attendance calculator.html" style="color: var(--accent-color);">ATTENDANCE CALCULATOR</a>
+          <a href="grade predictor.html">GRADE PREDICTOR</a>
+          <a href="analyser.html">GRADE ANALYSER</a>
+          <a href="feedback form.html">FEEDBACK FORM</a>
+          <a href="chatbot.html">CHAT BOT</a>
+        </div>
+      </div>
+    <div class="container">
+        <h1>Attendance Calculator</h1>
+        <label for="classesAttended">Classes Attended:</label>
+        <input type="number" id="classesAttended" placeholder="Enter classes attended" class="data-input" required>
+        <label for="totalClasses">Total Classes:</label>
+        <input type="number" id="totalClasses" placeholder="Enter total classes" class="data-input" required>
+        <br><br>
+        <button onclick="calculateAttendance()">Calculate</button>
+        <br><br>
+        <div id="progress-bar">
+            <div id="bar-container"><div id="progress">0%</div></div>
+            <br>
+            <div id="neededClasses"></div> 
+        </div>
+    </div>
+    <footer style="text-align: center; font-size: 15px; flex-shrink: 0; padding-bottom: 7px;">
+      <hr color="#333333">
+      © 2024 gradifyVIT. All rights reserved.
+  </footer>
+  </body>
+
+    <script>
+        function calculateAttendance() {
+    let classesAttended = parseInt(document.getElementById('classesAttended').value);
+    let totalClasses = parseInt(document.getElementById('totalClasses').value);
+
+    const attendancePercentage = (classesAttended / totalClasses) * 100;
+    const progress = document.getElementById('progress');
+    const neededClasses = document.getElementById('neededClasses');
+    progress.style.width = attendancePercentage * 3.78 + 'px';
+    progress.innerHTML = attendancePercentage.toFixed(2) + '%';
+
+    const progressBar = document.getElementById('progress-bar');
+    if (attendancePercentage < 74.01) {
+        progress.style.setProperty("--pcol", '#ff004f');
+        progress.style.setProperty("--scol", '#FF5733');
+        const targetPercentage = 74.01;
+        let needed = Math.ceil((targetPercentage / 100 * totalClasses) - classesAttended);
+
+        while ((classesAttended + needed) / (totalClasses + needed) < 0.7401) {
+            needed++;
+        }
+        progressBar.style.display = 'block';
+        neededClasses.innerHTML = `Attend <span style="color:#ff004f;">${needed}</span> more classes to maintain above 74.01%`;
+        neededClasses.style.display = 'inline-block';
+    } else {
+        progress.style.setProperty("--pcol", '#32CD32');
+        progress.style.setProperty("--scol", '#39ff14');
+        neededClasses.innerHTML ='<text style="color: green;">Your attendance is above 74.01%</text>';
+        progressBar.style.display = 'block';
+        neededClasses.style.display = 'inline-block';
+    }
+}
+
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function(){
+      document.body.classList.toggle("light-theme");
+      if(document.body.classList.contains("light-theme")){
+        icon.classList.remove("fa-toggle-on");
+        icon.classList.add("fa-toggle-off");
+      }
+      else {
+        icon.classList.remove("fa-toggle-off");
+        icon.classList.add("fa-toggle-on");
+      }
+    }
+
+    document.getElementById("toggle-navigation").addEventListener("click", function() {
+      var navigationPage = document.getElementById("navigation-page");
+      if (navigationPage.style.display === "flex") {
+        navigationPage.style.animation = "pop-out 0.3s ease forwards";
+        setTimeout(function() {
+          navigationPage.style.display = "none";
+        }, 300);
+      } else {
+        navigationPage.style.display = "flex";
+        navigationPage.style.animation = "pop-in 0.3s ease forwards";
+      }
+    });
+    </script>
+</body>
+</html>

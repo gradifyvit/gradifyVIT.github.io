@@ -1,0 +1,591 @@
+:root{
+    --primary-color: #202020;
+    --secondary-color: white;
+    --accent-color: #ccff00;
+  }
+  
+  .dark-theme{
+    --primary-color: #202020;
+      --secondary-color: white;
+      --accent-color: #ccff00;
+      --grid-line-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .light-theme{
+    --primary-color: #FFF8E1;
+    --secondary-color: black;
+    --accent-color: #8E4585;
+  }
+  
+  
+  html,body{
+    background-color: var(--primary-color);
+    font-family: "Source Code Pro", monospace;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1{
+    color: var(--secondary-color);
+    margin-left: 298px;
+  }
+  
+  .total_result .total_grade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+    margin: 0;
+    border-radius: 70px;
+    background: green;
+    color: var(--secondary-color);
+    padding: 10px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px -3px #000000b3
+  }
+  
+  .total {
+    line-height: 25px
+  }
+  
+  .jsc {
+    justify-content: center
+  }
+  
+  .result_column {
+    width: 50%
+  }
+  
+  .subject_name_title {
+    display: flex;
+    flex: 1
+  }
+  
+  .paper {
+    display: flex;
+    flex: 1;
+    justify-content: center
+  }
+  
+  .grade_point {
+    display: flex;
+    flex: 1
+  }
+  
+  .subject_name {
+    width: 45%
+  }
+  
+  .paper_name {
+    width: 33.33%
+  }
+  
+  .grade_point_main {
+    width: 33.33%
+  }
+  
+  .paper_ul {
+    margin: 0!important;
+    padding: 0;
+    text-align: center
+  }
+  
+  .paper_ul .first_paper_1 {
+    border-bottom: 1px solid var(--secondary-color)
+  }
+  
+  .paper_ul .first_paper_1,
+  .paper_ul .second_paper_2 {
+    list-style: none;
+    font-size: 14px;
+    padding: 6px 0
+  }
+  
+  .grade_and_paper_main {
+    width: 55%;
+    display: flex
+  }
+  
+  .paper_name_main {
+    flex: 1
+  }
+  
+  .grade_point_main_result {
+    display: flex;
+    flex: 1;
+    justify-items: center;
+    flex-direction: column;
+    justify-content: center
+  }
+  
+  .select_grades:first-child {
+    border-bottom: 1px solid var(--secondary-color)
+  }
+  
+  .degree_result_control {
+    padding: 2px 5px!important;
+    margin: 4px 0!important
+  }
+  
+  .degree_select_main {
+    margin: 3px 0!important
+  }
+  
+  .compulsory_subject {
+    width: 74%
+  }
+  
+  .grade_point_compulsory {
+    width: 28%
+  }
+  
+  .grede_format_box sup {
+    text-transform: capitalize
+  }
+  
+  
+  ::placeholder {
+    font-family: "Source Code Pro", monospace;
+  }
+  
+  :-ms-input-placeholder {
+    font-family: "Source Code Pro", monospace;
+  }
+  
+  ::-ms-input-placeholder {
+    font-family: "Source Code Pro", monospace;
+  }
+  
+  .gpa-calculator__container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  footer {
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--secondary-color);
+  }
+
+  .gpa-calculator__container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+  }
+  
+  .gpa-calculator__container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto
+  }
+  
+  .gpa-calculator__container .gpa-calculator__wrapper {
+    padding: 10px;
+  }
+  
+  .gpa-calculator__container .gpa-calculator__main-ul {
+    display: flex;
+    flex-direction: column
+  }
+  
+  .gpa-calculator__container .gpa-calculator__main-li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 10px;
+    list-style-type: none!important
+  }
+  
+  .gpa-calculator__container .gpa-calculator__heading {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center
+  }
+  
+  .gpa-calculator__container .gpa-calculator__header-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+  
+  .gpa-calculator__container .gpa-calculator__remove-all {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: 50%;
+    color: var(--secondary-color);
+        font-size: 1.3125rem;
+        line-height: 1;
+        font-weight: 400;
+        cursor: pointer;
+        background-color: transparent;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik0xIDFsNCA0IDQtNE0xIDlsNC00IDQgNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODQ4RDlDIi8+PC9zdmc+);
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: all .3s cubic-bezier(.16, .68, .43, .99)
+    }
+  
+    .gpa-calculator__container .gpa-calculator__remove-all:hover {
+        border-color: var(--accent-color);
+        background-color: transparent
+    }
+  
+    .gpa-calculator__container .active-hover {
+        border-color: var(--accent-color)!important;
+        box-shadow: 0 5px 12px -5px #0d2451!important
+    }
+  
+    .gpa-calculator__remove-item:hover {
+        border-color: var(--accent-color)!important;
+        background-color: transparent!important
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-ul {
+        margin: 0;
+        padding: 10px;
+        width: 100%
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-li {
+        width: 100%;
+        display: flex;
+        margin: 0;
+        align-items: center
+    }
+  
+    .gpa-calculator__container .gpa-calculator__input {
+        height: 50px;
+        flex: 0 1 auto;
+        margin: 0;
+        padding: 5px 10px;
+        outline: 0;
+        color: var(--accent-color)!important;
+        background-color: transparent!important;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid var(--secondary-color)!important;
+        border-left: 1px solid var(--secondary-color)!important;
+        font-size: 16px;
+        font-weight: 400
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-name {
+        flex: 0 1 350px
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-li:first-child .gpa-calculator__course-name {
+        border-top: 1px solid var(--secondary-color)!important;
+        border-top-left-radius: 5px!important
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-li:last-child .gpa-calculator__course-name {
+        border-bottom: 1px solid var(--secondary-color)!important;
+        border-bottom-left-radius: 5px!important
+    }
+  
+    .gpa-calculator__container .gpa-calculator__credits {
+        border-right: 1px solid var(--secondary-color)!important;
+        -moz-appearance: textfield!important
+    }
+  
+    .gpa-calculator__container .gpa-calculator__credits:focus,
+    .gpa-calculator__container .gpa-calculator__credits:hover {
+        border-right: 1px solid var(--secondary-color)!important;
+        -moz-appearance: textfield!important
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-li:first-child .gpa-calculator__credits {
+        border-top: 1px solid var(--secondary-color)!important;
+        border-top-right-radius: 5px!important
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-li:last-child .gpa-calculator__credits {
+        border-bottom: 1px solid var(--secondary-color)!important;
+        border-bottom-right-radius: 5px!important
+    }
+  
+  .gpa-calculator__container .gpa-calculator__grate {
+    height: 50px;
+    flex: 0 0 calc(33.33333% - 5rem);
+    width: calc(33.33333% - 5rem);
+    max-width: calc(33.33333% - 5rem);
+    margin: 0;
+    padding: 5px 10px;
+    outline: 0;
+    font-family: "Source Code Pro", monospace;
+    color: #808080!important;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: transparent!important; 
+    border: none;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: var(--secondary-color)!important;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI2cHgiIHZpZXdCb3g9IjAgMCAxMCA2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICAgICAgPHRpdGxlPkFydGJvYXJkIDM8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iQXJ0Ym9hcmQtMyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8cG9seWxpbmUgaWQ9IlBhdGgtMi1Db3B5LTIiIHN0cm9rZT0iIzg0OEQ5QyIgcG9pbnRzPSIxIDEgNSA1IDkgMSI+PC9wb2x5bGluZT4gICAgPC9nPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+  }
+  
+    .gpa-calculator__container .gpa-calculator__semester-cgpa {
+        font-weight: 700!important;
+        color: #3a3a3a;
+    }
+  
+    .gpa-calculator__container .gpa-calculator__course-li:first-child .gpa-calculator__grate {
+        border-top: 1px solid var(--secondary-color);
+    }
+  
+    .gpa-calculator__container .gpa-calculator__credits {
+        width: 100%
+    }
+  
+    .gpa-calculator__container .gpa-calculator__remove-item {
+        margin: 0;
+        margin-left: 10px;
+        padding: 12px;
+        outline: 0;
+        border: 1px solid var(--secondary-color);
+        border-radius: 50%;
+        color: var(--secondary-color);
+        font-size: 1.3125rem;
+        line-height: 1;
+        font-weight: 400;
+        cursor: pointer!important;
+        background-color: transparent;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik0xIDFsNCA0IDQtNE0xIDlsNC00IDQgNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODQ4RDlDIi8+PC9zdmc+);
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: all .3s cubic-bezier(.16, .68, .43, .99);
+        box-shadow: none!important
+        
+    }
+  
+    .gpa-calculator__container .gpa-calculator__add-course-semester {
+        display: flex;
+        align-items: center;
+        padding: 10px
+    }
+  
+    .gpa-calculator__container .gpa-calculator__semester-result {
+        font-size: 22px;
+        color: #ff004f;
+        font-weight: 400
+    }
+  
+    .gpa-calculator__container .gpa-calculator__semester-result>span {
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--secondary-color);
+    }
+  
+    .cgpa-calculator__result {
+        font-weight: 700!important
+    }
+  
+    .gpa-calculator__container .gpa-calculator__add-course {
+        padding-left: 10px
+    }
+  
+    .gpa-calculator__container .gpa-calculator__add-course__button {
+      background-color: transparent;
+      color: var(--accent-color);
+      padding: 10px 20px;
+      border: 3px solid var(--accent-color);
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: "Source Code Pro", monospace;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-size: large;
+    }
+  
+    .gpa-calculator__container .gpa-calculator__add-course__button:hover {
+      background-color:var(--accent-color);
+      color: var(--primary-color);
+      border-color: var(--accent-color);
+      font-weight: bold;
+    }
+  
+    .gpa-calculator__container .gpa-calculator__add-semester {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center
+    }
+  
+    .gpa-calculator__container .gpa-calculator__add-semester__button {
+      background-color: transparent;
+      color: var(--accent-color);
+      padding: 10px 20px;
+      border: 3px solid var(--accent-color);
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: "Source Code Pro", monospace;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-size: large;
+    }
+  
+    .gpa-calculator__container .gpa-calculator__add-semester__button:hover {
+      background-color:var(--accent-color);
+      color: var(--primary-color);
+      border-color: var(--accent-color);
+      font-weight: bold;
+    }
+  
+    #icon{
+      font-size: 25px;
+      margin-left: 18px;
+      margin-top: 18px;
+      color: var(--secondary-color);
+      position: fixed;
+      top:0;
+      left:0;
+      z-index: 999;
+  }
+  
+  h1{
+    margin-top: 50px;
+    margin-bottom: 2px;
+    color: var(--accent-color);
+  } 
+  
+  
+  #navigation-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .navigation-links {
+    text-align: center;
+  }
+  
+  .navigation-links a {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+  
+  .navigation-links a:hover {
+    font-size: 23px;
+    color: var(--accent-color);
+  }
+  
+  .menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  #icon {
+          font-size: 25px;
+          margin-left: 18px;
+          margin-top: 18px;
+          position: fixed;
+          color: var(--secondary-color);
+      }
+  
+  @keyframes pop-in {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes pop-out {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  .menu {
+  --s: 30px;
+  --c: var(--accent-color);
+  
+  height: var(--s);
+  aspect-ratio: 1;
+  border: none;
+  padding: 0;
+  border-inline: calc(var(--s)/2) solid #0000; 
+  box-sizing: content-box;
+  --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) 
+       no-repeat content-box border-box;
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
+       repeat-y content-box border-box;
+  background: 
+  var(--_g2) left  var(--_p,0px) top,
+  var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+  var(--_g2) right var(--_p,0px) top,
+  var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+  background-size: 
+  20% 80%,
+  40% 100%;
+  position: relative;
+  clip-path: inset(0 25%);
+  -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+  cursor: pointer;
+  transition: 
+  background-position .3s var(--_s,.3s), 
+  clip-path 0s var(--_s,.6s);
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  }
+  .menu:before,
+  .menu:after {
+  content:"";
+  position: absolute;
+  border-radius: var(--s);
+  inset: 40% 0;
+  background: var(--c);
+  transition: transform .3s calc(.3s - var(--_s,.3s));
+  }
+  
+  .menu:checked {
+  clip-path: inset(0);
+  --_p: calc(-1*var(--s));
+  --_s: 0s;
+  }
+  .menu:checked:before {
+  transform: rotate(45deg);
+  }
+  .menu:checked:after {
+  transform: rotate(-45deg);
+  }
+  .menu:focus-visible {
+  clip-path: none;
+  -webkit-mask: none;
+  border: none;
+  outline: 2px solid var(--c);
+  outline-offset: 5px;
+  }

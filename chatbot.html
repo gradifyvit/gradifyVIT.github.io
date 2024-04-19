@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dfb5da906e.js" crossorigin="anonymous"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+    <title>gradifyVIT</title>
+	<link rel="stylesheet" href="chatbot/style.css" />
+</head>
+
+<body>
+	<i class="fa-solid fa-toggle-on" id="icon"></i>
+	<div class="menu-icon" id="toggle-navigation">
+		<input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+	  </div>
+	
+	  <div id="navigation-page">
+		<div class="navigation-links">
+		  <a href="index.html">HOME</a>
+		  <a href="gpa calculator.html">GPA CALCULATOR</a>
+		  <a href="quick cgpa.html">QUICK CGPA CALCULATOR</a>
+		  <a href="goal gpa.html">GOAL GPA FINDER</a>
+		  <a href="attendance calculator.html">ATTENDANCE CALCULATOR</a>
+		  <a href="grade predictor.html">GRADE PREDICTOR</a>
+		  <a href="analyser.html">GRADE ANALYSER</a>
+		  <a href="feedback form.html">FEEDBACK FORM</a>
+		  <a href="chatbot.html" style="color: var(--accent-color);">CHAT BOT</a>
+		</div>
+	  </div>
+	<div id="container" class="container">
+		<h1> Chatbot </h1>
+		<div id="chat" class="chat">
+			<div id="messages" class="messages"></div>
+			<input id="input" type="text" class = "data-input" placeholder="Say something..." autocomplete="off" autofocus="true" />
+		</div>
+	</div>
+	<footer>
+		<hr color="#333333">
+		© 2024 gradifyVIT. All rights reserved.
+	</footer>
+</body>
+<script type="text/javascript" src="chatbot/index.js"></script>
+<script type="text/javascript" src="chatbot/constants.js"></script>
+<script type="text/javascript" src="chatbot/speech.js"></script>
+
+</html>
