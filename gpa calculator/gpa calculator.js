@@ -538,19 +538,21 @@
   ]);
   
   var icon = document.getElementById("icon");
-function updateTheme() {
-    var theme = localStorage.getItem("theme");
-    if (theme === "light") {
-        document.body.classList.add("light-theme");
-        document.body.classList.remove("dark-theme");
-        icon.classList.remove("fa-toggle-on");
-        icon.classList.add("fa-toggle-off");
-    } else {
-        document.body.classList.add("dark-theme");
-        document.body.classList.remove("light-theme");
-        icon.classList.remove("fa-toggle-off");
-        icon.classList.add("fa-toggle-on");
-    }
+  function updateTheme() {
+  var theme = localStorage.getItem("theme");
+  if (theme === "light") {
+      document.body.classList.add("light-theme");
+      document.body.classList.remove("dark-theme");
+      icon.classList.remove("fa-toggle-on");
+      icon.classList.add("fa-toggle-off");
+      document.documentElement.style.setProperty('--primary-color', '#FFF8E1');
+  } else {
+      document.body.classList.add("dark-theme");
+      document.body.classList.remove("light-theme");
+      icon.classList.remove("fa-toggle-off");
+      icon.classList.add("fa-toggle-on");
+      document.documentElement.style.setProperty('--primary-color', '#202020');
+  }
 }
 
 updateTheme();
@@ -567,7 +569,6 @@ icon.onclick = function () {
     } else {
         localStorage.setItem("theme", "dark");
     }
-    updateChart();
 }
 
 
