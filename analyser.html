@@ -101,7 +101,7 @@
             margin-top: 20px;
             width: 800px;
             height: 400px;
-            margin-left: 350px;
+            margin: 0 auto;
         }
 
         #numSemesters {
@@ -282,17 +282,19 @@
 </div>
 <div id="navigation-page">
     <div class="navigation-links">
-      <a href="index.html">HOME</a>
-      <a href="gpa calculator.html">GPA CALCULATOR</a>
-      <a href="quick cgpa.html">QUICK CGPA CALCULATOR</a>
-      <a href="goal gpa.html">GOAL GPA FINDER</a>
-      <a href="attendance calculator.html">ATTENDANCE CALCULATOR</a>
-      <a href="grade predictor.html">GRADE PREDICTOR</a>
-      <a href="analyser.html" style="color: var(--accent-color);">GRADE ANALYSER</a>
-      <a href="feedback form.html">FEEDBACK FORM</a>
-      <a href="chatbot.html">CHAT BOT</a>
+      <a href="./">HOME</a>
+      <a href="./gpa calculator">GPA CALCULATOR</a>
+      <a href="./quick cgpa">QUICK CGPA CALCULATOR</a>
+      <a href="./goal gpa">GOAL GPA FINDER</a>
+      <a href="./attendance calculator">ATTENDANCE CALCULATOR</a>
+      <a href="./grade predictor">GRADE PREDICTOR</a>
+      <a href="./analyser" style="color: var(--accent-color);">GRADE ANALYSER</a>
+      <a href="./feedback form">FEEDBACK FORM</a>
+      <a href="./chatbot">CHAT BOT</a>
     </div>
   </div>
+
+<div class="content-wrapper">
 <div class="container">
     <h1>GPA Progress Tracker</h1>
     <label for="numSemesters">Number of Semesters:</label>
@@ -302,6 +304,7 @@
 </div>
 <div id="gpaChartContainer" style="display: none;">
     <canvas id="gpaChart"></canvas>
+</div>
 </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
@@ -366,12 +369,8 @@ function renderChart(labels, data, numSemesters) {
         if (window.gpaChart instanceof Chart) {
             window.gpaChart.destroy();
         }
-
-        // Find the maximum GPA value
-        const maxGPA = Math.max(...data);
-
-        // Determine the maximum value for the y-axis (add some padding)
-        const maxY = Math.ceil(maxGPA) + 1;
+        const maxY = Math.max(...data) + 0.25;
+        const minY= Math.min(...data)-0.25;
 
         let backgroundColor, borderColor, fontColor, gridLineColor;
         if (document.body.classList.contains("light-theme")) {
@@ -417,7 +416,7 @@ function renderChart(labels, data, numSemesters) {
                         },
                         ticks: {
                             min: 0,
-                            max: maxY,
+                            max: 10,
                             fontColor: fontColor
                         },
                         scaleLabel: {
