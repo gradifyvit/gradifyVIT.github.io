@@ -1,5 +1,7 @@
 # GradifyVIT: Comprehensive Grade Prediction and Academic Analysis for VIT
 
+[Explore Now](gradifyvit.github.io)
+
 GradifyVIT is a web application designed to assist VIT students in managing their academic performance. This technical readme provides an overview of the project structure, features, and implementation details.
 
 ## Project Overview
